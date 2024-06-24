@@ -50,7 +50,7 @@ export default function Navbar() {
     <>
       <nav className="nav-nav" ref={navbar}>
         <Link
-          to="/"
+          to="/major-assignment-ui"
           className="nav-logo"
           onMouseEnter={onEnterNavbar}
           onMouseLeave={onLeaveNavbar}
@@ -65,7 +65,7 @@ export default function Navbar() {
             onMouseLeave={onLeaveNavbar}
             ref={(e) => e && magnets.current.push(e)}
           >
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/major-assignment-ui">
               Home
             </Link>
           </li>

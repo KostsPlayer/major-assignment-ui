@@ -17,7 +17,7 @@ export default function Registration() {
   const redirect = useNavigate();
   const goBack = () => {
     // window.history.back();
-    redirect("/");
+    redirect("/major-assignment-ui");
   };
 
   const [values, setValues] = useState({

@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/major-assighment-ui" element={<Home />} />
+        <Route path="/major-assignment-ui" element={<Home />} />
         <Route path="*" element={<Page404 />} />
         <Route path="/product" element={<Page404 />} />
         <Route path="/about-us" element={<Page404 />} />

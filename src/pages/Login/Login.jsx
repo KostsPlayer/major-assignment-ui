@@ -18,7 +18,7 @@ export default function Login() {
 
   const goBack = () => {
     // window.history.back();
-    redirect("/");
+    redirect("/major-assignment-ui");
   };
 
   useEffect(() => {
