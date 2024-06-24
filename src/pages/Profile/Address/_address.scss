@@ -1,0 +1,51 @@
+@use "./../../../assets/mixin" as m;
+
+.address {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "select-1 select-2"
+    "select-3 select-4"
+    "textarea textarea"
+    "button button";
+  gap: 0.5vw;
+  //   border: 0.2rem solid #000;
+
+  &-select-provincies {
+    grid-area: select-1;
+    height: 6vh;
+    // border: 0.2rem solid #000;
+  }
+
+  &-select-regencies {
+    grid-area: select-2;
+    height: 6vh;
+    // border: 0.2rem solid #000;
+  }
+
+  &-select-districts {
+    height: 6vh;
+    grid-area: select-3;
+    // border: 0.2rem solid #000;
+  }
+
+  &-select-villages {
+    grid-area: select-4;
+    height: 6vh;
+    // border: 0.2rem solid #000;
+  }
+
+  &-textarea {
+    grid-area: textarea;
+    // border: 0.2rem solid #000;
+  }
+
+  &-button {
+    grid-area: button;
+    @include m.flex();
+    justify-self: flex-end;
+    width: 5rem;
+    height: 6vh;
+    // border: 0.2rem solid #000;
+  }
+}

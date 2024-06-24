@@ -1,0 +1,19 @@
+@use "./../../assets/mixin" as m;
+
+.order {
+  @include m.flex();
+  gap: 1rem;
+  font-size: 1rem;
+
+  &-image {
+    @include m.flex($direction: column);
+    gap: 1rem;
+  }
+
+  &-detail {
+    .order-count {
+      @include m.flex($justify: flex-start);
+      gap: 1rem;
+    }
+  }
+}

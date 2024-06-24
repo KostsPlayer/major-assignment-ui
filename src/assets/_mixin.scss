@@ -1,0 +1,28 @@
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin circle($w-h) {
+  width: $w-h;
+  height: $w-h;
+  border-radius: 50%;
+}
+
+@mixin action-icon($bg-color, $color) {
+  .bagde-icon {
+    @include flex();
+    border: solid 0.12vw $bg-color;
+    border-radius: 50%;
+
+    .material-symbols-outlined {
+      // border: solid 0.4vh #000;
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
+      font-size: 2vw;
+      color: $color;
+      // margin: 50%;
+    }
+  }
+}

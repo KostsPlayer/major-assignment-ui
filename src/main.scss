@@ -1,0 +1,135 @@
+@use "./assets/mixin" as m;
+@use "./component/Navbar/navbar";
+@use "./pages/Home/Hero/hero";
+@use "./pages/Home/Hotsale/hotsale";
+@use "./pages/Home/Catalog/catalog";
+@use "./pages/Product/product";
+@use "./pages/About/about";
+@use "./pages/Registration/registration";
+@use "./pages/Login/login";
+@use "./pages/404/page404";
+@use "./pages/Layout/layout";
+@use "./pages/Dashboard/dashboard";
+@use "./pages/Roles/roles";
+@use "./pages/Sales/sales";
+@use "./pages/Menu/menu";
+@use "./pages/Store/store";
+@use "./pages/ProductId/productId";
+@use "./pages/Cart/cart";
+@use "./pages/Order/order";
+@use "./pages/History/history";
+@use "./pages/Profile/profile";
+@use "./pages/Category/category";
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  cursor: none;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f4dfc8;
+}
+
+.cursor {
+  @include m.circle($w-h: 2.5rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-follow {
+  @include m.circle($w-h: 2.5rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border: 0.05rem solid #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.preloader {
+  @include m.flex();
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: "Asap", sans-serif;
+  color: #fff;
+}
+
+.toast {
+  width: fit-content;
+  z-index: 9990;
+}
+
+.error-message {
+  list-style: none;
+  padding: 1.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edit {
+  @include m.action-icon($bg-color: #ffc107, $color: #ffc107);
+}
+
+.delete {
+  @include m.action-icon($bg-color: #dc3545, $color: #dc3545);
+}
+
+.badge-success {
+  border-radius: 50vw;
+  padding: 5% 15%;
+  width: fit-content;
+  height: auto;
+  background-color: #198754;
+  color: #fff;
+  font-size: 65%;
+}
+
+.badge-unsuccess {
+  border-radius: 50vw;
+  padding: 5% 15%;
+  width: fit-content;
+  height: auto;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 65%;
+}

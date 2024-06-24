@@ -1,0 +1,99 @@
+@use "./../../../assets/mixin" as m;
+@use "sass:math";
+
+.hotsale {
+  @include m.flex($direction: column);
+  background-color: #F4EAE0;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  // border: 0.2rem solid aqua;
+
+  &-title {
+    width: 100%;
+    padding: 8% 6% 6%;
+    // border: 0.2rem solid aqua;
+
+    &-text {
+      color: #fff;
+      @include m.flex($direction: column, $align: flex-start);
+      text-transform: uppercase;
+      line-height: 6rem;
+      font-size: 7rem;
+      overflow: hidden;
+      width: fit-content;
+      // border: 0.2rem solid aqua;
+
+      &-0 {
+        font-family: "Noto Serif Display", serif;
+        font-weight: 400;
+        // border: 0.2rem solid aqua;
+      }
+      
+      &-1 {
+        font-weight: 200;
+        font-family: "Archivo", sans-serif;
+        // border: 0.2rem solid aqua;
+      }
+    }
+  }
+
+  .carousel {
+    position: relative;
+    display: flex;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    // flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // border: 0.3rem solid aqua;
+
+    $w-box: math.div(100%, 3);
+    &-box {
+      position: relative;
+      flex: 1 0 $w-box;
+      width: $w-box;
+      height: 25rem;
+      object-fit: cover;
+    }
+
+    .control {
+      position: absolute;
+      @include m.flex($justify: space-between);
+      width: 100%;
+      padding: 0 4%;
+      top: 45%;
+      // border: 0.1rem solid aqua;
+
+      @mixin setDefault() {
+        border: 0;
+        background: none;
+        cursor: pointer;
+
+        .material-symbols-outlined {
+          font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+          font-size: 3.2rem;
+          color: #fff;
+        }
+      }
+
+      .next {
+        @include setDefault();
+      }
+
+      .prev {
+        @include setDefault();
+      }
+    }
+  }
+}
+
+// .text-stroke {
+//   -webkit-text-stroke: .4rem #000;
+//   -webkit-text-fill-color: transparent;
+//   font-size: 30rem;
+//   position: absolute;
+//   left: 1rem;
+//   font-family: "Lilita One", sans-serif;
+// }

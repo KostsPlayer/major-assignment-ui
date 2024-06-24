@@ -1,0 +1,184 @@
+@use "./../../assets/mixin" as m;
+
+.product-id {
+  // @include m.flex($align: flex-start);
+  padding: 2% 11%;
+  gap: 2vw;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto 1fr;
+
+  &-image {
+    width: 20rem;
+    height: 20rem;
+
+    img {
+      border-radius: 0.3vw;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-detail {
+    width: 100%;
+    height: auto;
+    @include m.flex($align: flex-start);
+    gap: 1vw;
+
+    .left-side {
+      @include m.flex($direction: column, $align: flex-start);
+      width: 100%;
+      height: auto;
+      gap: 1vw;
+
+      &-top {
+        // border: solid 4px firebrick;
+        width: 100%;
+        height: auto;
+
+        &-name {
+          font-weight: 700;
+          font-size: 150%;
+        }
+
+        &-price {
+          font-weight: 900;
+          font-size: 200%;
+          margin-bottom: 6vh;
+        }
+
+        &-category {
+          @include m.flex();
+          width: fit-content;
+          height: fit-content;
+          padding: 2%;
+          border-radius: 50vw;
+          border: 0.15vw solid #000;
+          font-size: 80%;
+          transition: background-color 0.3s ease-in-out;
+
+          &:hover {
+            background-color: #000;
+            color: #fff;
+          }
+        }
+      }
+
+      &-bottom {
+        padding: 3%;
+        width: 100%;
+        height: auto;
+
+        &-title {
+          position: relative;
+          font-weight: 900;
+          width: 100%;
+          height: auto;
+          left: 2.8%;
+          transition: all 0.5s ease-in-out;
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: #fff;
+
+            &::after {
+              border-bottom: #fff 0.2vw solid;
+            }
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 140%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 15%;
+            border-bottom: #000 0.2vw solid;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+
+        &-data {
+          text-align: justify;
+          padding-top: 3%;
+        }
+      }
+    }
+
+    .right-side {
+      border-radius: 1vw;
+      padding: 2%;
+      border: solid 0.1vw #000;
+      gap: 0.5vw;
+      @include m.flex($direction: column);
+      width: 70%;
+      height: auto;
+
+      &-top {
+        @include m.flex();
+        width: 100%;
+        gap: 1vw;
+        margin-bottom: 5vh;
+
+        &-count {
+          @include m.flex();
+          gap: 1vw;
+
+          .material-symbols-outlined {
+            border-radius: 0.15vw;
+            background-color: #000;
+            color: #fff;
+          }
+
+          .quantity {
+            font-size: 120%;
+            font-weight: 700;
+          }
+        }
+
+        &-stock {
+          .stock {
+            font-weight: 900;
+          }
+        }
+      }
+
+      &-total {
+        @include m.flex($justify: space-between);
+        width: 100%;
+        // border: solid 2px firebrick;
+
+        .total {
+          font-size: 150%;
+          font-weight: 900;
+        }
+      }
+
+      &-button {
+        @include m.flex();
+        gap: 1vw;
+
+        @mixin button($bg: #000, $c: #fff) {
+          width: 7vw;
+          padding: 4%;
+          outline: 0;
+          border: #000 solid 0.15vw;
+          border-radius: 0.3vw;
+          background-color: $bg;
+          color: $c;
+          font-weight: 700;
+          font-size: 95%;
+        }
+        .border {
+          @include button();
+        }
+
+        .full {
+          @include button($bg: transparent, $c: #000);
+        }
+      }
+    }
+  }
+}

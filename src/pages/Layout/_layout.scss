@@ -1,0 +1,48 @@
+@use "./../../assets/mixin" as m;
+@use "./Sidebar/sidebar" as s;
+@use "./Topbar/topbar" as t;
+
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  display: grid;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar content";
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 11vh 1fr;
+  // border: #ff0 0.15rem solid;
+
+  .sidebar {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 11vh 1fr auto;
+    grid-template-columns: 1fr;
+    grid-area: sidebar;
+    background-color: #000;
+    @include s.sidebar();
+    // border: #f00 0.15rem solid;
+  }
+
+  .topbar {
+    width: 100%;
+    height: 100%;
+    grid-area: topbar;
+    background-color: #fff;
+    padding: 0 2%;
+    @include t.topbar();
+    @include m.flex($justify: space-between);
+    // border: #f00 0.15rem solid;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    grid-area: content;
+    padding: 1.5%;
+    background-color: rgba($color: #000, $alpha: 0.1);
+    // border: #f00 0.15rem solid;
+  }
+}

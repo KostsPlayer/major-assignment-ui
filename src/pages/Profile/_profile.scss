@@ -1,0 +1,194 @@
+@use "./../../assets/mixin" as m;
+@use "./Address/address";
+
+.profile {
+  // border: 0.2rem solid #000;
+  @include m.flex($direction: column);
+  width: 100%;
+  height: auto;
+  padding: 2vw;
+  gap: 1vw;
+
+  &-form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1vw;
+    width: 100%;
+    height: auto;
+
+    &-image {
+      // border: 0.2rem solid #000;
+      @include m.flex($direction: column, $justify: flex-start);
+      width: 100%;
+      height: auto;
+      row-gap: 2vh;
+      padding: 0 1.2vw;
+
+      img {
+        @include m.circle($w-h: 20vw);
+        object-fit: cover;
+        
+      }
+
+      .profile-image-label {
+        border: 0.15vw solid #000;
+        display: inline-block;
+        color: #000;
+        padding: 0.5vw 1vw;
+        border-radius: 0.3vw;
+
+        &:hover {
+          background-color: #000;
+          color: #fff;
+          transition: all 0.3s ease-in-out;
+        }
+
+        input {
+          display: none;
+        }
+      }
+    }
+
+    &-desc {
+      // border: 0.2rem solid #000;
+      @include m.flex($direction: column);
+      width: 100%;
+      height: 100%;
+      gap: 2vh;
+      padding: 0 1.2vw;
+
+      &-row {
+        // border: 0.2rem solid #000;
+        @include m.flex($direction: column, $align: flex-start);
+        width: 100%;
+        height: 100%;
+        gap: 0.7vh;
+
+        input {
+          width: inherit;
+          padding: 0 3%;
+          height: 6vh;
+          font-size: 1.1rem;
+          outline: 0;
+          border: 0;
+          border-radius: 0.8vw;
+          background-color: #fff;
+          color: #000;
+          // border: 0.15vw solid #000;
+
+          &:disabled {
+            color: #808080;
+          }
+        }
+      }
+    }
+  }
+
+  &-address {
+    // border: 0.2rem solid #000;
+    @include m.flex($direction: column, $align: flex-start);
+    gap: 2vh;
+    padding: 2%;
+    width: 100%;
+    height: 100%;
+
+    &-add {
+      @include m.flex();
+      align-self: flex-end;
+      gap: 0.3vw;
+      text-decoration: none;
+      width: fit-content;
+      height: auto;
+      border-radius: 0.4vw;
+      padding: 0.6vw 0.8vw;
+      background-color: #000;
+      color: #fff;
+      font-size: 0.9rem;
+
+      &:hover {
+        .material-symbols-outlined {
+          font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 20;
+        }
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
+      }
+    }
+
+    &-item {
+      // border: #000 solid 0.2rem;
+      padding-top: 1.5%;
+      width: 100%;
+      height: auto;
+      display: grid;
+      grid-template-columns: 5fr 1fr;
+
+      .column-left {
+        @include m.flex($direction: column, $align: flex-start);
+        width: 100%;
+        height: auto;
+        gap: 4vh;
+        padding-bottom: 1.8%;
+        text-align: justify;
+        border-bottom: #000 solid 0.2vh;
+        // background-color: #000;
+      }
+
+      .column-right {
+        @include m.flex($align: flex-end, $direction: column);
+        gap: 0.3vw;
+
+        .icon {
+          @include m.flex();
+          gap: 0.3vw;
+
+          .delete {
+            &:hover {
+              .bagde-icon {
+                background-color: #dc3545;
+                transition: all 0.3s ease-in-out;
+              }
+
+              .material-symbols-outlined {
+                font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0,
+                  "opsz" 20;
+                color: #fff;
+                transition: all 0.3s ease-in-out;
+              }
+            }
+          }
+
+          .edit {
+            &:hover {
+              .bagde-icon {
+                background-color: #ffc107;
+                transition: all 0.3s ease-in-out;
+              }
+
+              .material-symbols-outlined {
+                font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0,
+                  "opsz" 20;
+                color: #fff;
+                transition: all 0.3s ease-in-out;
+              }
+            }
+          }
+        }
+
+        .set-main {
+          border: #000 solid 0.15vw;
+          border-radius: 0.25vw;
+          font-size: 0.9rem;
+          padding: 2.5%;
+
+          &:hover {
+            background-color: #000;
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
